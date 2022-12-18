@@ -1,4 +1,4 @@
-package com.simbirsoft.derevyankoA.pages.ui;
+package com.simbirsoft.derevyankoA.ui.pages;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
@@ -8,9 +8,9 @@ import lombok.SneakyThrows;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
-import static com.simbirsoft.derevyankoA.helpers.AllureAttachments.screenshotAs;
-import static com.simbirsoft.derevyankoA.tests.ui.TestBaseUI.MANUFACTURERS;
-import static com.simbirsoft.derevyankoA.tests.ui.TestBaseUI.MIN_PRICE;
+import static com.simbirsoft.derevyankoA.ui.helpers.AllureAttachmentsUI.screenshotAs;
+import static com.simbirsoft.derevyankoA.ui.tests.TestBaseUI.MANUFACTURERS;
+import static com.simbirsoft.derevyankoA.ui.tests.TestBaseUI.MIN_PRICE;
 
 public class CatalogPage {
 

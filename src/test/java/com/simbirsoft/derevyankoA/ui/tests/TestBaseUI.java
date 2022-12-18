@@ -1,18 +1,18 @@
-package com.simbirsoft.derevyankoA.tests.ui;
+package com.simbirsoft.derevyankoA.ui.tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import com.simbirsoft.derevyankoA.pages.ui.CatalogPage;
-import com.simbirsoft.derevyankoA.pages.ui.ChecksPage;
-import com.simbirsoft.derevyankoA.pages.ui.MainPage;
+import com.simbirsoft.derevyankoA.ui.pages.CatalogPage;
+import com.simbirsoft.derevyankoA.ui.pages.ChecksPage;
+import com.simbirsoft.derevyankoA.ui.pages.MainPage;
 import io.qameta.allure.junit5.AllureJunit5;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-import static com.simbirsoft.derevyankoA.helpers.AllureAttachments.*;
+import static com.simbirsoft.derevyankoA.ui.helpers.AllureAttachmentsUI.*;
 import static io.qameta.allure.Allure.step;
 
 @ExtendWith({AllureJunit5.class})

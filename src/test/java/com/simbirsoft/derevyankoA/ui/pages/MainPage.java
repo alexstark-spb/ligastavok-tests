@@ -1,4 +1,4 @@
-package com.simbirsoft.derevyankoA.pages.ui;
+package com.simbirsoft.derevyankoA.ui.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
@@ -7,7 +7,7 @@ import lombok.SneakyThrows;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static com.simbirsoft.derevyankoA.helpers.AllureAttachments.screenshotAs;
+import static com.simbirsoft.derevyankoA.ui.helpers.AllureAttachmentsUI.screenshotAs;
 
 public class MainPage {
 

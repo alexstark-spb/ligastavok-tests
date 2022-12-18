@@ -1,4 +1,4 @@
-package com.simbirsoft.derevyankoA.pages.ui;
+package com.simbirsoft.derevyankoA.ui.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
@@ -7,9 +7,9 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.Arrays;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.simbirsoft.derevyankoA.helpers.AllureAttachments.screenshotAs;
-import static com.simbirsoft.derevyankoA.tests.ui.TestBaseUI.MANUFACTURERS;
-import static com.simbirsoft.derevyankoA.tests.ui.TestBaseUI.MIN_PRICE;
+import static com.simbirsoft.derevyankoA.ui.helpers.AllureAttachmentsUI.screenshotAs;
+import static com.simbirsoft.derevyankoA.ui.tests.TestBaseUI.MANUFACTURERS;
+import static com.simbirsoft.derevyankoA.ui.tests.TestBaseUI.MIN_PRICE;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 

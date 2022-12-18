@@ -1,4 +1,4 @@
-package com.simbirsoft.derevyankoA.tests.ui;
+package com.simbirsoft.derevyankoA.ui.tests;
 
 import io.qameta.allure.*;
 import lombok.extern.log4j.Log4j2;
