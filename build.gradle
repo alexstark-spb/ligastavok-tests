@@ -19,7 +19,7 @@ def allureVersion = "2.20.1",
     restAssuredVersion = "5.3.0",
     jacksonDatabindVersion = "2.14.0",
     assertjCoreVersion = "3.23.1",
-    slf4jSimpleVersion = "2.0.5"
+    log4jVersion = "2.19.0"
 
 allure {
     report {
@@ -52,10 +52,10 @@ dependencies {
             "io.rest-assured:rest-assured:$restAssuredVersion",
             "io.qameta.allure:allure-rest-assured:$allureVersion",
             "com.fasterxml.jackson.core:jackson-databind:$jacksonDatabindVersion",
-            "org.assertj:assertj-core:$assertjCoreVersion")
-    testRuntimeOnly(
-            "org.slf4j:slf4j-simple:$slf4jSimpleVersion",
-            "org.junit.jupiter:junit-jupiter-engine:$junitVersion")
+            "org.assertj:assertj-core:$assertjCoreVersion",
+            "org.apache.logging.log4j:log4j-api:$log4jVersion",
+            "org.apache.logging.log4j:log4j-core:$log4jVersion")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
 }
 
 tasks.withType(Test) {
@@ -80,12 +80,12 @@ tasks.withType(Test) {
 
 task ui_tests(type: Test) {
     useJUnitPlatform {
-        includeTags "ui-tests"
+        includeTags "marketYandex"
     }
 }
 
 task api_tests(type: Test) {
     useJUnitPlatform {
-        includeTags "api-tests"
+        includeTags "theCatAPI"
     }
 }
