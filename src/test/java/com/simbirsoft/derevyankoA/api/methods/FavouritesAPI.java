@@ -64,7 +64,8 @@ public class FavouritesAPI {
                 assertThat(favouritesImageID).isEqualTo(imageID);
                 break;
             }
-        }  if (!isFound) {
+        }
+        if (!isFound) {
             fail(String.format("Изображение с ID: '%s' не найдено в избранном!", favouritesID));
         }
     }
@@ -103,10 +104,9 @@ public class FavouritesAPI {
                 isFound = true;
                 break;
             }
-        }  if (isFound) {
-            fail(String.format("Изображение с ID: '%s' не было удалено из списка избранного!", favouritesID));
-        } else {
-            System.out.printf("Изображение с ID: '%s' удалено и отсутствует в списке избранного!%n", favouritesID);
+        }
+        if (isFound) {
+            fail("Изображение с ID: '%s' не было удалено из списка избранного!", favouritesID);
         }
     }
 }

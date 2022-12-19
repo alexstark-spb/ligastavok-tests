@@ -37,7 +37,7 @@ public class BreedsAPI {
             }
         }
         if (!isFound) {
-            fail(String.format("Порода с ID: '%s' не найдена!", breedName));
+            fail("Порода с ID: '%s' не найдена!", breedName);
         }
     }
 }
