@@ -70,7 +70,7 @@ allure serve build/allure-results
 ```
 ## Отчёт в Allure Report
 ### Доска с аналитикой тестирования
-![Allure Overview]()
+![Allure Overview](https://user-images.githubusercontent.com/70107243/208445412-ecac4150-c968-492e-aa7d-0126d980c0d9.png)
 
 ### Пример автоматизированного тест кейса API
-![Allure Behaviors]()
+![Allure Behaviors](https://user-images.githubusercontent.com/70107243/208445507-fe55c8aa-5c01-4ad1-8e72-9b9fb2e1c120.png)
