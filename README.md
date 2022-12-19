@@ -41,14 +41,36 @@
 </table>
 
 ## Команды для запуска из терминала
-...
+Для запуска API тестов потребуется API Key!
 
+Получить его можно по электронной почте бесплатно после регистрации на сайте [thecatapi.com](https://thecatapi.com/)
+### Запуск всех тестов UI + API:
+```bash
+gradle clean test -DapiKey=*ваш API Key*
+```
+### Запуск тестов UI с параметрами по умолчанию:
+```bash
+gradle clean ui_tests
+```
+### Запуск тестов UI с браузером FireFox и разрешением 1920х1080:
+```bash
+gradle clean ui_tests -Dbrowser=firefox -DbrowserSize=1920x1080
+```
+### Запуск тестов UI с включением параллельного выполнения и выбором 4-х потоков:
+```bash
+gradle clean ui_tests -DparallelRun=true -Dthreads=4
+```
+### Запуск тестов API:
+```bash
+gradle clean api_tests -DapiKey=*ваш API Key*
+```
+### Собрать Allure отчет:
+```bash
+allure serve build/allure-results
+```
 ## Отчёт в Allure Report
 ### Доска с аналитикой тестирования
 ![Allure Overview]()
 
 ### Пример автоматизированного тест кейса
 ![Allure Behaviors]()
-
-## Оповещение о прохождении тестов в Telegram
-![Telegram Bot]()
