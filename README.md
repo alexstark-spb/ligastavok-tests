@@ -72,5 +72,5 @@ allure serve build/allure-results
 ### Доска с аналитикой тестирования
 ![Allure Overview]()
 
-### Пример автоматизированного тест кейса
+### Пример автоматизированного тест кейса API
 ![Allure Behaviors]()

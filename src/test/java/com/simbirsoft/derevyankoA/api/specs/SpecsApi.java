@@ -13,8 +13,7 @@ public class SpecsApi {
                 .filter(AllureRestAssuredFilter.withCustomTemplates())
                 .log().all()
                 .contentType("application/json; charset=utf-8")
-                .header("x-api-key", System.getProperty("apiKey",
-                        "live_xZHJvMkAPINyGZRr26V3ZCoD37OAb9FePRDKvaTRLD2dfqC0FSvR0h1Bim9oY1zp"))
+                .header("x-api-key", System.getProperty("apiKey"))
                 .baseUri(BASE_URL);
     }
 }
