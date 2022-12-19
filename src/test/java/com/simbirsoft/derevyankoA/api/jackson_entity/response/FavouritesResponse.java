@@ -12,4 +12,6 @@ public class FavouritesResponse {
     private String messageFavourites;
     @JsonProperty("id")
     private Integer idFavourites;
+    @JsonProperty("image_id")
+    private String imageIdFavourites;
 }

@@ -9,7 +9,8 @@ public enum ApiEndpoints {
 
     GET_BREEDS("/breeds"),
     SEARCH_IMAGES("/images/search"),
-    ADD_TO_FAVOURITES("/favourites");
+    FAVOURITES("/favourites"),
+    DELETE_FROM_FAVOURITES("/favourites/{favouritesID}");
 
     private final String endpoint;
 }

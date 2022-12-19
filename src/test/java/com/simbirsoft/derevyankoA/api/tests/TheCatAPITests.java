@@ -15,15 +15,20 @@ import org.junit.jupiter.api.Test;
 @Tag("theCatAPI")
 public class TheCatAPITests extends TestBaseAPI {
 
+    public static final String BREED_NAME = "Scottish Fold";
+
     @Test
-    @Feature("API tests: www.thecatapi.com")
+    @Feature("API tests")
     @Owner("Alexander Derevyanko")
     @Severity(SeverityLevel.NORMAL)
-    @Link(name = "thecatapi.com/", url = "https://thecatapi.com/")
-    @DisplayName("Добавление/удаление изображения в Favourites")
+    @Link(name = "www.thecatapi.com", url = "https://thecatapi.com/")
+    @DisplayName("Добавление/удаление изображения в Избранное")
     void checkTheCatApiMethods() {
-        getBreedID();
+        getBreedID(BREED_NAME);
         getPictureByBreedID();
         addImageToFavourites();
+        getFavourites();
+        deleteImageFromFavourites();
+        checkImageInFavouritesAfterDeletion();
     }
 }

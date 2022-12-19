@@ -15,11 +15,10 @@ import static org.assertj.core.api.Assertions.fail;
 @Log4j2
 public class BreedsAPI {
 
-    public static final String BREED_NAME = "Scottish Fold";
     public static String breedID;
 
-    @Step()
-    public void getBreedID() {
+    @Step("Получение ID")
+    public void getBreedID(String breedName) {
         BreedsResponse[] breedsList =
                 given()
                         .spec(requestSpec())
@@ -31,14 +30,14 @@ public class BreedsAPI {
 
         boolean isFound = false;
         for (BreedsResponse breed : breedsList) {
-            if (breed.getNameBreed().equals(BREED_NAME)) {
+            if (breed.getNameBreed().equals(breedName)) {
                 breedID = breed.getIdBreed();
                 isFound = true;
                 break;
             }
         }
         if (!isFound) {
-            fail(String.format("Порода с ID: '%s' не найдена!", BREED_NAME));
+            fail(String.format("Порода с ID: '%s' не найдена!", breedName));
         }
     }
 }

@@ -19,7 +19,7 @@ public class ImagesAPI {
     public static String imageID;
     public static String imageURL;
 
-    @Step()
+    @Step("Получение изображения")
     public void getPictureByBreedID() {
         ImagesResponse[] imagesList =
                 given()

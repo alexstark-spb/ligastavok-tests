@@ -5,12 +5,12 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import lombok.SneakyThrows;
 
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.sleep;
 import static com.simbirsoft.derevyankoA.ui.helpers.AllureAttachmentsUI.screenshotAs;
-import static com.simbirsoft.derevyankoA.ui.tests.TestBaseUI.MANUFACTURERS;
-import static com.simbirsoft.derevyankoA.ui.tests.TestBaseUI.MIN_PRICE;
+import static com.simbirsoft.derevyankoA.ui.tests.YandexMarketTests.MANUFACTURERS;
+import static com.simbirsoft.derevyankoA.ui.tests.YandexMarketTests.MIN_PRICE;
 
 public class CatalogPage {
 
@@ -25,7 +25,7 @@ public class CatalogPage {
 
     @Step("Нажать на вкладку 'Каталог'")
     public CatalogPage typeCatalogTab() {
-        TYPE_CATALOG.click();
+        TYPE_CATALOG.shouldBe(visible).click();
         screenshotAs("Скриншот страницы каталога");
         return this;
     }
@@ -39,7 +39,7 @@ public class CatalogPage {
 
     @Step("На странице выбрать категорию 'Телевизоры и аксессуары -> Телевизоры'")
     public CatalogPage typeTvCategory() {
-        TYPE_TV_AND_ACC.click();
+        TYPE_TV_AND_ACC.scrollIntoView(true).click();
         TYPE_TELEVISION.click();
         screenshotAs("Скриншот страницы с разделом 'Телевизоры'");
         return this;
@@ -55,16 +55,15 @@ public class CatalogPage {
     @Step("Установить чекбоксы производителей Samsung и LG")
     public CatalogPage setCheckboxes() {
         for (String checkbox : MANUFACTURERS) {
-            SET_CHECKBOXES.scrollTo().$(byText(checkbox)).click();
+            SET_CHECKBOXES.$(byText(checkbox)).click();
         }
-        sleep(3000);
         screenshotAs("Скриншот выбранных чекбоксов производителя");
         return this;
     }
 
     @Step("Выбрать первый телевизор в списке")
     public CatalogPage selectTV() {
-        SELECT_FIRST_TV.scrollTo().click();
+        SELECT_FIRST_TV.shouldBe(visible).scrollIntoView(true).click();
         screenshotAs("Скриншот выбора первого товара в списке");
         return this;
     }

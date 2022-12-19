@@ -6,9 +6,10 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import static com.simbirsoft.derevyankoA.api.methods.BreedsAPI.BREED_NAME;
+
 import static com.simbirsoft.derevyankoA.api.methods.BreedsAPI.breedID;
 import static com.simbirsoft.derevyankoA.api.methods.ImagesAPI.imageURL;
+import static com.simbirsoft.derevyankoA.api.tests.TheCatAPITests.BREED_NAME;
 
 public class AllureAttachmentsAPI {
 

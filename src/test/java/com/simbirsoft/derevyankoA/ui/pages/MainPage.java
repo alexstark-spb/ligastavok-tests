@@ -1,8 +1,8 @@
 package com.simbirsoft.derevyankoA.ui.pages;
 
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import lombok.SneakyThrows;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
@@ -16,13 +16,11 @@ public class MainPage {
             ENTER_IN_SEARCHBAR = $("#header-search"),
             CHECK_SEARCH_RESULT = $("[data-grabber='SearchBreadcrumbs']");
 
-    @SneakyThrows
     @Step("Открыть страницу market.yandex.ru")
-    public MainPage openPage() {
-        open("/");
-        Thread.sleep(10000);
+    public MainPage openYandexMarketPage() {
+        open("https://market.yandex.ru/");
         CHECK_PAGE_TITLE.shouldHave(text("Маркет"));
-        screenshotAs("Скриншот главной страницы");
+        screenshotAs("Скриншот главной страницы ЯндексМаркет");
         return this;
     }
 
@@ -30,6 +28,6 @@ public class MainPage {
     public void searchProduct(String product) {
         ENTER_IN_SEARCHBAR.setValue(product).pressEnter();
         CHECK_SEARCH_RESULT.shouldHave(text(product));
-        screenshotAs("Скриншот главной страницы");
+        screenshotAs("Скриншот главной страницы ЯндексМаркет");
     }
 }

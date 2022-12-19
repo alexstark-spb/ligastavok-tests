@@ -6,10 +6,11 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.util.Arrays;
 
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.simbirsoft.derevyankoA.ui.helpers.AllureAttachmentsUI.screenshotAs;
-import static com.simbirsoft.derevyankoA.ui.tests.TestBaseUI.MANUFACTURERS;
-import static com.simbirsoft.derevyankoA.ui.tests.TestBaseUI.MIN_PRICE;
+import static com.simbirsoft.derevyankoA.ui.tests.YandexMarketTests.MANUFACTURERS;
+import static com.simbirsoft.derevyankoA.ui.tests.YandexMarketTests.MIN_PRICE;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
@@ -21,7 +22,7 @@ public class ChecksPage {
 
     @Step("Проверка стоимости товара")
     public ChecksPage checkPriceOfProduct() {
-        int actualResult = Integer.parseInt(CHECK_PRICE.text().replaceAll("[^0-9]", ""));
+        int actualResult = Integer.parseInt(CHECK_PRICE.shouldBe(visible).text().replaceAll("[^0-9]", ""));
         assertThat(actualResult)
                 .as("Цена товара меньше чем " + MIN_PRICE + " руб")
                 .isGreaterThan(Integer.parseInt(MIN_PRICE));
@@ -31,7 +32,8 @@ public class ChecksPage {
 
     @Step("Проверка производителя в заголовке товара")
     public void checkTitleOfProduct() {
-        String actualResult = StringUtils.substringBetween(CHECK_MANUFACTURER.toString(), "alt=\"", "\" class");
+        String actualResult = StringUtils.substringBetween(
+                CHECK_MANUFACTURER.toString(), "alt=\"", "\" class");
         boolean isInclude = false;
         for (String manufacturer : MANUFACTURERS) {
             if (actualResult.contains(manufacturer)) {

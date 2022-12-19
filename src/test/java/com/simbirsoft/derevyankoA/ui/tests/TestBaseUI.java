@@ -3,6 +3,7 @@ package com.simbirsoft.derevyankoA.ui.tests;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import com.simbirsoft.derevyankoA.ui.pages.AuthorizationPage;
 import com.simbirsoft.derevyankoA.ui.pages.CatalogPage;
 import com.simbirsoft.derevyankoA.ui.pages.ChecksPage;
 import com.simbirsoft.derevyankoA.ui.pages.MainPage;
@@ -18,9 +19,7 @@ import static io.qameta.allure.Allure.step;
 @ExtendWith({AllureJunit5.class})
 public class TestBaseUI {
 
-    public static final String MIN_PRICE = "20000";
-    public static final String[] MANUFACTURERS = {"Samsung", "LG"};
-
+    protected static final AuthorizationPage AUTHORIZATION_PAGE = new AuthorizationPage();
     protected static final MainPage MAIN_PAGE = new MainPage();
     protected static final CatalogPage CATALOG_PAGE = new CatalogPage();
     protected static final ChecksPage CHECKS_PAGE = new ChecksPage();
@@ -28,10 +27,11 @@ public class TestBaseUI {
     @BeforeAll
     static void setupBeforeAll() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        Configuration.browser = System.getProperty("browserName", "chrome");
+        Configuration.timeout = 6000;
+        Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserSize = System.getProperty("browserSize", "1600x900");
-        Configuration.baseUrl = "https://market.yandex.ru";
-        attachAsText("BrowserRun", System.getProperty("browserName", "chrome"));
+        Configuration.baseUrl = "https://passport.yandex.ru/auth/welcome";
+        attachAsText("BrowserRun", System.getProperty("browser", "chrome"));
     }
 
     @AfterEach
